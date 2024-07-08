@@ -1,0 +1,100 @@
+{
+  "xxx_dir1": {
+    "capsType": "useCode",
+    "capsUseCodeInfo": {
+      "capsUseFSPath": "/",
+      "capsUseLabel": { "pt-br": "root/", "en": "root/" },
+      "capsUseInputs": {
+        "ccc_dirSeed-0": {
+          "capsIptCodeID": "ccc_dirSeed-0",
+          "capsIptTxtValue": ""
+        },
+        "ccc_dirSeed-1": {
+          "capsIptCodeID": "ccc_dirSeed-1",
+          "capsIptCapsValue": ["CDbiMRZcaJT16peEZDVd"]
+        }
+      },
+      "capsUseDescription": { "pt-br": "a" },
+      "capsUpdatedAt": [{ "seconds": 1687739918, "nanoseconds": 742000000 }],
+      "capsUseConections": "1",
+      "capsCodeID": "ccc_dirSeed",
+      "capsCodeVersionID": "1"
+    },
+    "capsDB": {
+      "capsUserID": "",
+      "capsCreatedAt": {
+        "seconds": 1687739918,
+        "nanoseconds": 742000000
+      },
+      "capsID": "xxx_dir1",
+      "capsPrjID": "V726aYN7mxq4LsEUwAXL"
+    }
+  },
+  "xxx_file1_x": {
+    "capsType": "useCode",
+    "capsUseCodeInfo": {
+      "capsUseFSPath": "src/",
+      "capsUseLabel": { "pt-br": "index.tsx", "en": "index.tsx" },
+      "capsUseInputs": {
+        "ccc_fileSeed-0": {
+          "capsIptCodeID": "ccc_fileSeed-0",
+          "capsIptTxtValue": "index.tsx"
+        },
+        "ccc_fileSeed-1": {
+          "capsIptCodeID": "ccc_fileSeed-1",
+          "capsIptCapsValue": ["CDbiMRZcaJT16peEZDVd"]
+        }
+      },
+      "capsUseDescription": { "pt-br": "" },
+      "capsUpdatedAt": [{ "seconds": 1687739918, "nanoseconds": 742000000 }],
+      "capsCodeVersionID": "1",
+      "capsUseConections": "1",
+      "capsCodeID": "ccc_fileSeed"
+    },
+    "capsDB": {
+      "capsUserID": "",
+      "capsCreatedAt": {
+        "seconds": 1687739918,
+        "nanoseconds": 742000000
+      },
+      "capsID": "xxx_file1",
+      "capsPrjID": "V726aYN7mxq4LsEUwAXL"
+    }
+  },
+  "CDbiMRZcaJT16peEZDVd": {
+    "capsType": "useCode",
+    "capsUseCodeInfo": {
+      "capsUseLabel": { "pt-br": "Start Morfos" },
+      "capsCodeVersionID": "1",
+      "capsUseInputs": {
+        "ccc_project-0": {
+          "capsIptCodeID": "ccc_project-0",
+          "capsIptTxtValue": "home"
+        },
+        "ccc_project-1": {
+          "capsIptCodeID": "ccc_project-1",
+          "capsIptCapsValue": []
+        },
+        "ccc_project-2": {
+          "capsIptCodeID": "ccc_project-2",
+          "capsIptCapsValue": []
+        },
+        "ccc_project-3": {
+          "capsIptCapsValue": [],
+          "capsIptCodeID": "ccc_project-3"
+        }
+      },
+      "capsUseDescription": { "pt-br": "home" },
+      "capsUpdatedAt": [{ "seconds": 1687739918, "nanoseconds": 742000000 }],
+      "capsUseConections": "1",
+      "capsCodeID": "ccc_project",
+      "capsUseFSPath": "src/index.tsx"
+    },
+    "capsDB": {
+      "capsUserID": "",
+      "capsCreatedAt": { "seconds": 1687739918, "nanoseconds": 742000000 },
+      "capsID": "CDbiMRZcaJT16peEZDVd",
+      "capsPrjID": "V726aYN7mxq4LsEUwAXL"
+    }
+  }
+}

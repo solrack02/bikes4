@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "start-morfos",
+    "slug": "start-morfos",
+    "version": "1.7.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": ["**/*"],
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+
+    "web": { "favicon": "./assets/favicon.png" },
+    "runtimeVersion": { "policy": "appVersion" },
+
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "br.com.azi.sismobiapp",
+      "buildNumber": "7"
+    },
+
+    "android": {
+      "package": "br.com.azi.sismobiapp",
+      "versionCode": 7,
+
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        { "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera." }
+      ]
+    ],
+
+    "owner": "aztecnologia",
+    "extra": { "eas": { "projectId": "5e242c76-afc0-4fb0-adb1-fb68e1ae0a2d" } },
+    "updates": {
+      "url": "https://u.expo.dev/5e242c76-afc0-4fb0-adb1-fb68e1ae0a2d"
+    }
+  }
+}

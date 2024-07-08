@@ -1,0 +1,140 @@
+name: Update expo
+on: [push]
+
+jobs:
+  easUpdate:
+    name: EAS Update
+    runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, 'github actions - gen update')
+
+    steps:
+      - name: Checkout repository
+        id: get_repo
+        uses: actions/checkout@v3
+
+      - name: Read README.md(gh-pages)
+        id: ghpages
+        uses: jaywcjlove/github-action-read-file@main
+        with:
+          branch: master
+          path: ids.json
+      
+      - name: Echo README.md(gh-pages)
+        run: echo "${{ fromJson(steps.ghpages.outputs.content).userID }}"
+        # env:
+        #   BASE_HOST: 'https://5001-morfosdev-flaxboll-0v4gqvdn5sb.ws-us106.gitpod.io/flaxboll/us-central1/fireUserUpdateQr'
+        #   userID: "${{ fromJson(steps.ghpages.outputs.content).userID }}"
+        #   projectID: "${{ fromJson(steps.ghpages.outputs.content).projectID }}"
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: xOhedZB0gXh_9ov40Uzt0gd1wOGIwhu6plESS84l
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Create preview
+        id: preview
+        uses: expo/expo-github-action/preview@v8
+        with:
+          command: eas update --auto
+          
+      - name: Set Qr Code
+        run: |
+          curl --location --request GET 'https://5001-morfosdev-flaxboll-0v4gqvdn5sb.ws-us106.gitpod.io/flaxboll/us-central1/fireUserUpdateQr' \
+          --header 'Content-Type: text/plain' \
+          --data '{"qrcodeUrl":"${{steps.preview.outputs.qr}}","userID":"${{ fromJson(steps.ghpages.outputs.content).userID }}","projectID":"${{ fromJson(steps.ghpages.outputs.content).projectID }}"}'
+
+#       - name: Update latest version in realtime database
+#         id: firestore
+#         uses: w9jds/firebase-trigger@master
+#         with:
+#           credentials: ${{ secrets.FIREBASE_CREDENTIALS }}
+#           databaseUrl: https://flaxboll.firebaseio.com
+#           databaseType: firestore
+#           path: github
+#           doc: qGjG0ZpnktK5sSkxet3n
+#           value: ${{ secrets.OBJ_FIRE }}
+          # value: ${{ toJSON('{"name":"jsdaniell", "password":"mypass"}') }}
+          
+# - name: Show Error1
+#   run: 
+#     echo ${{ steps.firestore.outputs }}
+    
+# - name: Show Error2
+#   run: 
+#     echo ${{ steps.firestore.outputs.response }}
+    
+# - name: Show Error3
+#   run: 
+#     echo ${{ steps.firestore.outputs.error }}
+          
+# name: Update expo OLDxx
+# on: [push]
+
+# jobs:
+#   easUpdate:
+#     name: Update EAS
+#     runs-on: ubuntu-latest
+#     if: contains(github.event.head_commit.message, 'github actions - gen update')
+    
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: 20.x
+#           cache: yarn
+          
+#       - name: Setup Expo and EAS
+#         uses: expo/expo-github-action@v8
+#         with:
+#           eas-version: latest
+#           token: xOhedZB0gXh_9ov40Uzt0gd1wOGIwhu6plESS84l
+          
+#       - name: Install dependencies
+#         run: yarn
+        
+      # - name: Update on EAS
+      #   id: easUpdate
+      #   run: eas update --channel preview --message "teste1" --non-interactive
+
+      # - name: Create preview
+      #   uses: expo/expo-github-action/preview@v8
+      #   with:
+      #     command: eas update --channel preview --message "teste1" --non-interactive
+        
+      # - name: Show Response1
+      #   run: |
+      #     echo ${{ steps }}
+        
+      # - name: Show Response2
+      #   run: |
+      #     echo ${{ steps.easUpdate }}
+        
+      # - name: Show Response3
+      #   run: |
+      #     echo ${{ fromJson(steps.easUpdate.outputs.reponse) }}
+
+
+  # setFirebase:
+  #   name: set firebase
+  #   runs-on: ubuntu-latest
+  #   if: ${{ always() }}
+  #   needs: [easUpdate]
+      # steps:
+      #  - name: Update Firestore
+      #   run: firebase-tools xxx
+      # xx
+
+# DOCS
+# https://github.com/w9jds/firebase-trigger
+# https://github.com/expo/expo-github-action/tree/main/preview#available-variables
+        

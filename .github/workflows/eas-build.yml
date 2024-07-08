@@ -1,0 +1,24 @@
+name: Generate build expo
+on: [push]
+
+jobs:
+  build:
+    name: Install and build
+    runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, 'github actions - gen build')
+    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+          cache: yarn
+      - name: Setup Expo and EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: xOhedZB0gXh_9ov40Uzt0gd1wOGIwhu6plESS84l
+      - name: Install dependencies
+        run: yarn
+      - name: Build on EAS
+        run: eas build --profile preview --platform android --non-interactive

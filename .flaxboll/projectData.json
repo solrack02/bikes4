@@ -1,0 +1,19 @@
+{
+  "projectDB": {
+    "prjCreatedAt": {
+      "seconds": 100000000,
+      "nanoseconds": 100000000
+    },
+    "projectID": "ppp_01",
+    "userID": "uuu_01",
+    "repositoryUrl": "",
+    "repositoryName": ""
+  },
+
+  "projectInfo": {
+    "capsInitID": "xxx_dir1",
+    "capsProjectID": "CDbiMRZcaJT16peEZDVd"
+  },
+
+  "isMobile": true
+}
