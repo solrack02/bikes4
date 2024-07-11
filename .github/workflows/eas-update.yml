@@ -12,20 +12,6 @@ jobs:
         id: get_repo
         uses: actions/checkout@v3
 
-      - name: Read README.md(gh-pages)
-        id: ghpages
-        uses: jaywcjlove/github-action-read-file@main
-        with:
-          branch: master
-          path: ids.json
-      
-      - name: Echo README.md(gh-pages)
-        run: echo "${{ fromJson(steps.ghpages.outputs.content).userID }}"
-        # env:
-        #   BASE_HOST: 'https://5001-morfosdev-flaxboll-0v4gqvdn5sb.ws-us106.gitpod.io/flaxboll/us-central1/fireUserUpdateQr'
-        #   userID: "${{ fromJson(steps.ghpages.outputs.content).userID }}"
-        #   projectID: "${{ fromJson(steps.ghpages.outputs.content).projectID }}"
-
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -51,7 +37,7 @@ jobs:
         run: |
           curl --location --request GET 'https://5001-morfosdev-flaxboll-0v4gqvdn5sb.ws-us106.gitpod.io/flaxboll/us-central1/fireUserUpdateQr' \
           --header 'Content-Type: text/plain' \
-          --data '{"qrcodeUrl":"${{steps.preview.outputs.qr}}","userID":"${{ fromJson(steps.ghpages.outputs.content).userID }}","projectID":"${{ fromJson(steps.ghpages.outputs.content).projectID }}"}'
+          --data '{"qrcodeUrl":"${{steps.preview.outputs.qr}}","userID":"yOiD5acPfFPoLZpEbfy5","projectID":"qh2FJLWN4Oc6C4gI8VwE"}'
 
 #       - name: Update latest version in realtime database
 #         id: firestore
