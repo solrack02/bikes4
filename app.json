@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "start-morfos",
-    "slug": "start-morfos",
+    "name": "flax_bikes4",
+    "slug": "flaxbikes4",
     "scheme": "returnsite",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -28,7 +28,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "bff76d46-4391-43c6-9fd2-b0dbb2f2e11a"
+        "projectId": "8e0398ff-d06e-4f6f-9e90-29bd93a3c5b1"
       }
     },
     "owner": "morfos",
@@ -36,7 +36,7 @@
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/bff76d46-4391-43c6-9fd2-b0dbb2f2e11a"
+      "url": "https://u.expo.dev/8e0398ff-d06e-4f6f-9e90-29bd93a3c5b1"
     }
   }
 }
