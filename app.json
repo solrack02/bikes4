@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expoQR",
-    "slug": "expoQR",
+    "name": "start-morfos",
+    "slug": "start-morfos",
     "scheme": "returnsite",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -28,7 +28,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "b1a321c3-206b-43ab-957e-20fe821e88bd"
+        "projectId": "bff76d46-4391-43c6-9fd2-b0dbb2f2e11a"
       }
     },
     "owner": "morfos",
@@ -36,7 +36,7 @@
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/b1a321c3-206b-43ab-957e-20fe821e88bd"
+      "url": "https://u.expo.dev/bff76d46-4391-43c6-9fd2-b0dbb2f2e11a"
     }
   }
 }
