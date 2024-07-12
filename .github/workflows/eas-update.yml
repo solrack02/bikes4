@@ -51,8 +51,8 @@ jobs:
       #     --header 'Content-Type: text/plain' \
       #     --data '{"qrcodeUrl":"${{ steps.preview.outputs.qr }}","userID":"${{ secrets.USERID }}","projectID":"${{ secrets.PROJECTID }}"}'
 
-      # - name: Install Firebase CLI
-      #   run: npm install -g firebase-tools
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
   
       # - name: Authenticate with Firebase
       #   run: |
