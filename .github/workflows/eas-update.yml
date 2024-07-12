@@ -62,9 +62,11 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
+          echo "${FIREBASE_SERVICE_ACCOUNT}"
           echo "${FIREBASE_SERVICE_ACCOUNT}" > service-account.json
           cat service-account.json  # Verifique se o arquivo JSON foi criado corretamente
-          firebase auth:import service-account.json --token "${{ secrets.FIREBASE_TOKEN }}"
+          
+        # firebase auth:import service-account.json --token "${{ secrets.FIREBASE_TOKEN }}"
   
       # - name: Write to Firestore
       #   run: |
