@@ -35,11 +35,15 @@ jobs:
         run: eas init --id ${{ secrets.EXPOPROJECTID }} --non-interactive
       
             
-      - name: Create preview
-        id: preview
-        uses: expo/expo-github-action/preview@v8
-        with:
-          command: eas update --auto
+      # - name: Create preview
+      #   id: preview
+      #   uses: expo/expo-github-action/preview@v8
+      #   with:
+      #     command: eas update --auto
+
+      # -------
+      # -------
+      # -------
       
       # - name: Set Qr Code
       #   run: |
@@ -51,10 +55,15 @@ jobs:
         run: npm install -g firebase-tools
   
       - name: Authenticate with Firebase
+        run: |
+          firebase auth:import service-account.json --token "${{ secrets.FIREBASE_TOKEN }}"
+
+      - name: Debug Firebase Authentication
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
           echo "${FIREBASE_SERVICE_ACCOUNT}" > service-account.json
+          cat service-account.json  # Verifique se o arquivo JSON foi criado corretamente
           firebase auth:import service-account.json --token "${{ secrets.FIREBASE_TOKEN }}"
   
       - name: Write to Firestore
