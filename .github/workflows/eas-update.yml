@@ -41,8 +41,22 @@ jobs:
         with:
           command: eas update --auto
       
-      - name: Set Qr Code
+      # - name: Set Qr Code
+      #   run: |
+      #     curl --location --request GET 'https://us-central1-flaxboll.cloudfunctions.net/fireUserUpdateQr' \
+      #     --header 'Content-Type: text/plain' \
+      #     --data '{"qrcodeUrl":"${{ steps.preview.outputs.qr }}","userID":"${{ secrets.USERID }}","projectID":"${{ secrets.PROJECTID }}"}'
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+  
+      - name: Authenticate with Firebase
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
-          curl --location --request GET 'https://us-central1-flaxboll.cloudfunctions.net/fireUserUpdateQr' \
-          --header 'Content-Type: text/plain' \
-          --data '{"qrcodeUrl":"${{ steps.preview.outputs.qr }}","userID":"${{ secrets.USERID }}","projectID":"${{ secrets.PROJECTID }}"}'
+          echo "${FIREBASE_SERVICE_ACCOUNT}" > service-account.json
+          firebase auth:import service-account.json --token "${{ secrets.FIREBASE_TOKEN }}"
+  
+      - name: Write to Firestore
+        run: |
+          firebase firestore:docset /users/${{ secrets.USERID }}/projects/${{ secrets.PROJECTID }} --data '{"expoQrCode":"${{ steps.preview.outputs.qr }}"}'
