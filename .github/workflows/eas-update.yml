@@ -20,11 +20,11 @@ jobs:
           node-version: '18'
       
             
-      - name: Setup EAS
-        uses: expo/expo-github-action@v8
-        with:
-          eas-version: latest
-          token: ${{ secrets.EXPOTOKEN }}
+      # - name: Setup EAS
+      #   uses: expo/expo-github-action@v8
+      #   with:
+      #     eas-version: latest
+      #     token: ${{ secrets.EXPOTOKEN }}
       
             
       - name: Install dependencies
@@ -62,9 +62,9 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
-          echo "${FIREBASE_SERVICE_ACCOUNT}"
-          echo "${FIREBASE_SERVICE_ACCOUNT}" > service-account.json
           cat service-account.json  # Verifique se o arquivo JSON foi criado corretamente
+        # echo "${FIREBASE_SERVICE_ACCOUNT}"
+        # echo "${FIREBASE_SERVICE_ACCOUNT}" > service-account.json
           
         # firebase auth:import service-account.json --token "${{ secrets.FIREBASE_TOKEN }}"
   
