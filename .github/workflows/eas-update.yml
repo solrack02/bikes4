@@ -43,6 +43,6 @@ jobs:
       
       - name: Set Qr Code
         run: |
-          curl --location --request GET 'https://5001-morfosdev-flaxboll-0v4gqvdn5sb.ws-us106.gitpod.io/flaxboll/us-central1/fireUserUpdateQr' \
+          curl --location --request GET 'https://us-central1-flaxboll.cloudfunctions.net/fireUserUpdateQr' \
           --header 'Content-Type: text/plain' \
           --data '{"qrcodeUrl":"${{ steps.preview.outputs.qr }}","userID":"${{ secrets.USERID }}","projectID":"${{ secrets.PROJECTID }}"}'
