@@ -24,7 +24,7 @@ jobs:
         uses: expo/expo-github-action@v8
         with:
           eas-version: latest
-          token: ${{ secrets.expoToken }}
+          token: ${{ secrets.EXPOTOKEN }}
       
             
       - name: Install dependencies
@@ -32,7 +32,7 @@ jobs:
       
             
       - name: Configure EAS project
-        run: eas init --id ${{ secrets.expoProjectID }} --non-interactive
+        run: eas init --id ${{ secrets.EXPOPROJECTID }} --non-interactive
       
             
       - name: Create preview
@@ -45,4 +45,4 @@ jobs:
         run: |
           curl --location --request GET 'https://5001-morfosdev-flaxboll-0v4gqvdn5sb.ws-us106.gitpod.io/flaxboll/us-central1/fireUserUpdateQr' \
           --header 'Content-Type: text/plain' \
-          --data '{"qrcodeUrl":"${{ steps.preview.outputs.qr }}","userID":"${{ secrets.userID }}","projectID":"${{ secrets.projectID }}"}'
+          --data '{"qrcodeUrl":"${{ steps.preview.outputs.qr }}","userID":"${{ secrets.USERID }}","projectID":"${{ secrets.PROJECTID }}"}'
