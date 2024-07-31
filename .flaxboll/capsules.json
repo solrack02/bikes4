@@ -447,5 +447,54 @@
         }
       }
     }
+  },
+    "caps_btn_2B": {
+    "capsDB": {
+      "capsCreatedAt": 1720809625515,
+      "capsID": "caps_btn_2B",
+      "capsPrjID": "ppp_01",
+      "capsUserID": "uuu_01"
+    },
+    "capsType": "useCode",
+    "capsUseCodeInfo": {
+      "capsUseFSPath": "src/index.tsx",
+      "capsCodeID": "ccc_pressable",
+
+      "capsUseConections": "1",
+      "parents": {
+        "conn_1": {
+          "connID": "conn_1",
+          "capsParentIptID": "ccc_screen-2",
+          "parentData": {
+            "parentConnID": "conn_1",
+
+            "capsParentID": "caps_screen_2"
+          }
+        }
+      },
+
+      "capsCodeVersionID": "1",
+      "capsUpdatedAt": [1720809625515],
+      "capsUseLabel": { "en": "", "pt-br": "Pressionável (botão)" },
+      "capsUseDescription": { "en": "", "pt-br": "xxx" },
+      "capsUseInputs": {
+        "ccc_pressable-0": {
+          "capsIptCodeID": "ccc_pressable-0",
+          "capsIptCapsValue": []
+        },
+        "ccc_pressable-1": {
+          "capsIptCodeID": "ccc_pressable-1",
+          "capsIptCapsValue": []
+        },
+        "ccc_pressable-2": {
+          "capsIptCodeID": "ccc_pressable-2",
+          "capsIptCapsValue": []
+        },
+        "ccc_pressable-3": {
+          "capsIptCodeID": "ccc_pressable-3",
+          "capsIptCapsValue": ["caps_function_2"]
+        }
+      }
+    }
   }
 }
