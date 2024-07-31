@@ -351,7 +351,7 @@
         },
         "ccc_screen-2": {
           "capsIptCodeID": "ccc_screen-2",
-          "capsIptCapsValue": ["caps_btn_2"]
+          "capsIptCapsValue": ["caps_btn_2", "caps_btn_2B"]
         },
         "ccc_screen-3": {
           "capsIptCodeID": "ccc_screen-3",
