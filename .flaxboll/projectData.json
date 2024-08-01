@@ -12,7 +12,21 @@
 
   "projectInfo": {
     "capsInitID": "xxx_dir1",
-    "capsProjectID": "caps_project_1"
+    "capsProjectID": "caps_project_1",
+    "ggg_1": {
+        "capsGroupID": "ggg_1",
+        "capsGroupName": "Group 1",
+        "capsGroupPosition": 1,
+        "capsGroupChildren": {
+            "ccc_1": {
+                "gpID": "ggg_1",
+                "capsControlID": "ccc_1",
+                "capsID": "caps_project_1",
+                "connID": "conn_1",
+                "capsPosition": 1
+            }
+        }
+    }
   },
 
   "isMobile": true
